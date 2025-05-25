@@ -1,10 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router";
-// import signInImg from '../assets/signin.svg'
 import { FcGoogle } from "react-icons/fc";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { use, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-// import Spinner from "../components/ui/Spinner";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contexts/AuthContext";
 import Spinner from "../../components/ui/Spinner";
