@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @import "tailwindcss";
 @plugin "daisyui" {
@@ -7,15 +7,24 @@
 @plugin "daisyui/theme" {
     name: "light";
     default: true;
-    --color-primary: #403F3F;
-    --color-secondary: #D72050;
-    --color-base-200: #F3F3F3;
+    --color-primary: #05264E;
+    --color-secondary: #3C65F5;
+    --color-base-100: #FFFFFF;
     --color-base-300: #E7E7E7;
-    --color-accent: #706F6F;
+    --color-accent: ##f8faff;
+  }
+@plugin "daisyui/theme" {
+    name: "dark";
+    default: true;
+    --color-primary: #3C65F5;
+    --color-secondary: #05264E;
+    --color-base-100: #05264E;
+    --color-base-300: #E7E7E7;
+    --color-accent: ##f8faff;
   }
 
   * {
-    font-family: "Poppins", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 
   a.active {
