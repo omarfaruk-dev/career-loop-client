@@ -26,7 +26,7 @@ const JobCard = ({ job }) => {
         if (salaryRange?.min && salaryRange?.max) {
             salary = (
                 <span className="inline-flex items-center gap-1 text-base">
-                    <span className="text-primary">Salary:</span> <TbCurrencyTaka className="text-secondary text-base" />
+                    <TbCurrencyTaka className="text-secondary text-base" />
                     <span className="text-sm">{salaryRange.min}</span>
                     <span className="mx-1 text-gray-400 text-sm">-</span>
                     <span className="text-sm">{salaryRange.max}</span>
@@ -35,7 +35,7 @@ const JobCard = ({ job }) => {
         } else if (salaryRange?.min) {
             salary = (
                 <span className="inline-flex items-center gap-1 text-base">
-                    <span className="text-primary">Salary:</span> <TbCurrencyTaka className="text-secondary text-base" />
+                    <TbCurrencyTaka className="text-secondary text-base" />
                     <span className="text-sm">{salaryRange.min}</span>
                 </span>
             );
@@ -52,7 +52,7 @@ const JobCard = ({ job }) => {
         <div className="bg-secondary/5 border hover:bg-base-100 border-secondary/10 rounded-xl p-6 shadow-sm transition hover:shadow-md flex flex-col justify-between min-w-[270px] max-w-xs w-full mx-auto md:max-w-sm lg:max-w-xs">
             {/* Company & Logo */}
             <div className="flex items-center gap-3 mb-2">
-                <img src={company_logo} alt={company} className="w-12 h-12 rounded-lg object-cover  border border-secondary/10" />
+                <img src={company_logo} alt={company} className="w-12 h-12 p-0.5 rounded-lg object-cover  border border-secondary/10" />
                 <div>
                     <h3 className="font-semibold text-lg text-primary leading-tight">{company}</h3>
                     <div className="flex items-center gap-1 text-xs text-gray-400">
@@ -81,16 +81,16 @@ const JobCard = ({ job }) => {
             {/* Requirements/Tags */}
             <div className="flex flex-wrap gap-2 mb-4">
                 {requirements && requirements.slice(0, 3).map((req, i) => (
-                    <span key={i} className="bg-secondary/10 text-primary text-xs font-medium px-3 py-1 rounded-md border border-secondary/10">{req}</span>
+                    <span key={i} className="bg-secondary/5 text-primary text-xs font-medium px-3 py-1 rounded-md border border-secondary/5">{req}</span>
                 ))}
             </div>
             {/* Salary & Button */}
             <div className="flex flex-col items-center justify-center mt-auto pt-2 gap-3 ">
                 <span className="text-secondary font-bold">
                     {salary || '৳800'}
-                    <span className="font-normal text-gray-400">{salaryUnit}</span>
+                    <span className="font-normal text-xs text-gray-400"> {salaryUnit}</span>
                 </span>
-                <Link to={`/job-details/${_id}`} className="bg-secondary/10 text-secondary font-semibold px-5 py-2 rounded-lg transition hover:bg-secondary hover:text-white border border-secondary/10 text-sm w-full sm:w-auto whitespace-nowrap">Apply Now</Link>
+                <Link to={`/job-details/${_id}`} className="bg-secondary/10 text-secondary font-semibold px-5 py-2 rounded-lg transition hover:bg-secondary hover:text-white border border-secondary/10 text-sm w-full sm:w-auto whitespace-nowrap">Show Details</Link>
             </div>
         </div>
     );
