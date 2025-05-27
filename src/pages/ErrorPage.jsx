@@ -1,5 +1,5 @@
 import { Link, useRouteError } from 'react-router';
-import Button from '../components/ui/Button';
+import Button from './Shared/Button';
 
 const ErrorPage = () => {
 

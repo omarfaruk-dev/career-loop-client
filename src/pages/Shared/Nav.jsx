@@ -3,7 +3,7 @@ import { use, useEffect, useState } from "react";
 import { FaBars, FaTimes, FaUserCircle, FaSignOutAlt, FaUser, FaMoon, FaSun } from "react-icons/fa";
 
 import Swal from "sweetalert2";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);

@@ -5,7 +5,7 @@ import { use, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contexts/AuthContext";
-import Spinner from "../../components/ui/Spinner";
+import Spinner from "../Shared/Spinner";
 
 const SignIn = () => {
 

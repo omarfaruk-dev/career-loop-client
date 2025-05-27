@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import SignIn from "../pages/SignIn/SignIn";
+import JobDetails from "../pages/JobDetails/JobDetails";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '*',
                 Component: ErrorPage
+            }, 
+            {
+                path: '/job-details/:id',
+                Component: JobDetails,
             }
         ]
     }

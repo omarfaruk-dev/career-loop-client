@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Swal from "sweetalert2";
-import Spinner from "../../components/ui/Spinner";
+import Spinner from "../Shared/Spinner";
 
 const Register = () => {
     //data from context

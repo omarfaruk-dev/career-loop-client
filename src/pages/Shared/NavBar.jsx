@@ -2,7 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const NavBar = () => {
   const { user, signOutUser } = useContext(AuthContext);
