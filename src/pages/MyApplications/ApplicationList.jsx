@@ -3,7 +3,7 @@ import ApplicationRow from './ApplicationRow';
 
 const ApplicationList = ({ MyApplicationsPromise }) => {
     const applications = use(MyApplicationsPromise);
-    console.log(applications);
+
 
     return (
         <div className="overflow-x-auto">

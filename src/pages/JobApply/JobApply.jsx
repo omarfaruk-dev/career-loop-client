@@ -135,16 +135,6 @@ const JobApply = () => {
                             placeholder="Your resume url"
                         />
                     </div>
-                    {/* <div>
-                            <label className="block text-sm font-medium text-primary mb-1">Resume <span className="text-xs text-gray-400">(PDF, DOCX)</span></label>
-                            <input
-                                type="file"
-                                name="resume"
-                                accept=".pdf,.doc,.docx"
-                                required
-                                className="w-full px-4 py-2 border border-secondary/20 rounded-lg focus:outline-none focus:border-secondary bg-white"
-                            />
-                        </div> */}
                     <div>
                         <label className="block text-sm font-medium text-primary mb-1">Cover Letter</label>
                         <textarea

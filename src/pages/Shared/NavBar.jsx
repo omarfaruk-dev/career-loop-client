@@ -43,6 +43,7 @@ const NavBar = () => {
     { name: 'Find a Job', to: '/jobs' },
     { name: 'My Applications', to: '/my-applications' },
     { name: 'Add Job', to: '/add-job' },
+    { name: 'My Posted Jobs', to: '/my-posted-jobs' },
     { name: 'Contact', to: '/contact' },
   ];
 

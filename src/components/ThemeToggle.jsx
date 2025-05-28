@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('roomly-theme');
+      const savedTheme = localStorage.getItem('careerLoop-theme');
       return savedTheme ? savedTheme : 'light';
     }
     return 'light';
@@ -15,7 +15,7 @@ const ThemeToggle = () => {
     document.body.removeAttribute('data-theme');
     document.body.setAttribute('data-theme', theme);
     document.body.style.colorScheme = theme;
-    localStorage.setItem('roomly-theme', theme);
+    localStorage.setItem('careerLoop-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
