@@ -1,44 +1,47 @@
 import { Link, NavLink, useNavigate } from "react-router";
-import { useContext, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useContext, useState, useRef, useEffect } from "react";
+import { FaBars, FaTimes, FaUser } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contexts/AuthContext";
+import ThemeToggle from '../../components/ThemeToggle';
 
 const NavBar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const menuRef = useRef();
 
   // Signout user
   const handleSignOut = () => {
-    signOutUser()
+    signOutUser();
     Swal.fire({
       position: "center",
       icon: "success",
       title: "Log Out Successful!",
       showConfirmButton: false,
       timer: 1500
-    })
-      .then(() => {
-        navigate('/')
-      })
-      .catch(error => {
-        const errorMessage = error.message;
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: errorMessage || 'Something went wrong!',
-        });
-      });
-  }
+    }).then(() => {
+      navigate("/");
+    });
+  };
+
+  // Close user menu on outside click
+  useEffect(() => {
+    if (mobileMenuOpen !== 'profile') return;
+    const handleClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [mobileMenuOpen]);
 
   // Nav links data
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'Find a Job', to: '/jobs' },
-    { name: 'Recruiters', to: '/recruiters' },
-    { name: 'Candidates', to: '/candidates' },
-    { name: 'Pages', to: '/pages' },
+    { name: 'My Applications', to: '/my-applications' },
     { name: 'Blog', to: '/blog' },
     { name: 'Contact', to: '/contact' },
   ];
@@ -65,34 +68,53 @@ const NavBar = () => {
             </NavLink>
           ))}
         </div>
-        {/* Auth Buttons */}
-        <div className="hidden md:flex lg:flex items-center gap-4">
+        {/* User/Profile Section & Theme Toggle */}
+        <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           {!user ? (
             <>
-              <Link to="/register" className="underline text-[#0a2259] font-medium hover:text-blue-600">Register</Link>
-              <Link to="/signin" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-2 rounded-lg shadow transition-all">Sign in</Link>
+              <Link to="/signin" className="btn btn-secondary btn-outline px-4 py-1 rounded-md text-sm">Sign In</Link>
+              <Link to="/register" className="btn btn-secondary px-4 py-1 rounded-md text-sm">Sign Up</Link>
             </>
           ) : (
-            <button onClick={handleSignOut} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-2 rounded-lg shadow transition-all">Logout</button>
+            <div className="relative" ref={menuRef}>
+              <button
+                className="focus:outline-none"
+                onClick={() => setMobileMenuOpen(mobileMenuOpen === 'profile' ? false : 'profile')}
+              >
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt={user.displayName} className="w-10 h-10 rounded-full border-2 border-secondary" />
+                ) : (
+                  <FaUser className="w-8 h-8 text-secondary rounded-full border-2 border-secondary p-1" />
+                )}
+              </button>
+              {mobileMenuOpen === 'profile' && (
+                <div className="absolute right-0 mt-2 w-40 bg-white border border-secondary/20 rounded-lg shadow-lg z-50 flex flex-col">
+                  <span className="px-4 py-2 text-sm text-primary font-medium">{user.displayName}</span>
+                  <Link to="/my-profile" className="px-4 py-2 text-sm text-secondary hover:bg-secondary/10" onClick={() => setMobileMenuOpen(false)}>Profile</Link>
+                  <button onClick={handleSignOut} className="px-4 py-2 text-sm text-secondary hover:bg-secondary/10 text-left">Logout</button>
+                </div>
+              )}
+            </div>
           )}
         </div>
         {/* Mobile Hamburger */}
-        <div className="lg:hidden flex items-center">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-2xl text-blue-600 focus:outline-none">
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-2xl text-secondary focus:outline-none">
             {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#f6f9fc] shadow-md z-50 animate-fade-in">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-50">
           <div className="flex flex-col items-center gap-4 py-6">
             {navLinks.map(link => (
               <NavLink
                 key={link.name}
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-base font-medium transition-colors duration-200 ${isActive ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-[#0a2259] hover:text-blue-500'}`
+                  `text-base font-medium ${isActive ? 'text-secondary underline' : 'text-primary hover:text-secondary'}`
                 }
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -101,11 +123,20 @@ const NavBar = () => {
             ))}
             {!user ? (
               <>
-                <Link to="/register" className="underline text-[#0a2259] font-medium hover:text-blue-600" onClick={() => setMobileMenuOpen(false)}>Register</Link>
-                <Link to="/signin" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-2 rounded-lg shadow transition-all" onClick={() => setMobileMenuOpen(false)}>Sign in</Link>
+                <Link to="/signin" className="btn btn-secondary btn-outline px-4 py-1 rounded-md text-sm" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
+                <Link to="/register" className="btn btn-secondary px-4 py-1 rounded-md text-sm" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
               </>
             ) : (
-              <button onClick={() => { handleSignOut(); setMobileMenuOpen(false); }} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-2 rounded-lg shadow transition-all">Logout</button>
+              <div className="flex flex-col items-center gap-2">
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt={user.displayName} className="w-10 h-10 rounded-full border-2 border-secondary" />
+                ) : (
+                  <FaUser className="w-8 h-8 text-secondary rounded-full border-2 border-secondary p-1" />
+                )}
+                <span className="text-sm font-medium text-primary">{user.displayName}</span>
+                <Link to="/my-profile" className="text-secondary underline text-sm" onClick={() => setMobileMenuOpen(false)}>Profile</Link>
+                <button onClick={() => { handleSignOut(); setMobileMenuOpen(false); }} className="text-sm text-secondary underline">Logout</button>
+              </div>
             )}
           </div>
         </div>

@@ -13,15 +13,15 @@
     --color-base-300: #E7E7E7;
     --color-accent: ##F9FAFF;
   }
-/* @plugin "daisyui/theme" {
+@plugin "daisyui/theme" {
     name: "dark";
     default: true;
-    --color-primary: #3C65F5;
-    --color-secondary: #052500;
-    --color-base-100: #05264E;
+    --color-primary: #E2E8F0; 
+    --color-secondary: #7B9DFF;
+    --color-base-100: #0F172A;
     --color-base-300: #E7E7E7;
     --color-accent: ##f8faff;
-  } */
+  }
 
   * {
     font-family: "Plus Jakarta Sans", sans-serif;
