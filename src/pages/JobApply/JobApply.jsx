@@ -20,7 +20,7 @@ const JobApply = () => {
         const portfolio = form.portfolio.value;
         const coverLetter = form.coverLetter.value;
 
-        const application = { name, email, phone, linkedin, github, portfolio, resume, coverLetter };
+        const application = {jobId, name, email, phone, linkedin, github, portfolio, resume, coverLetter };
 
         // Form submission (API call)
         axios.post('http://localhost:3000/applications', application)
