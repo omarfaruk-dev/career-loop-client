@@ -9,7 +9,7 @@ const HotJobs = ({jobsPromise}) => {
     const filteredJobs = selectedCategory ? jobs.filter(job => job.category === selectedCategory) : jobs;
    
     return (
-        <section className="max-w-7xl mx-auto bg-base-100 py-10 md:py-20 px-4 md:px-8">
+        <section className="max-w-[1326px] mx-auto bg-base-100 py-10 md:py-20 px-4 md:px-8">
             {/* Header Section */}
             <div className="mb-10 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">Jobs of the day</h2>

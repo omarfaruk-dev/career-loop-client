@@ -12,9 +12,9 @@ const SignIn = () => {
     // const { user, signInUser, googleSignIn, setUser } = use
     const { user, signInUser, googleSignIn, setUser } = use(AuthContext);
 
-
     //use location for path
     const location = useLocation();
+    const from = location.state || '/';
     //navigate / redirect to another page
     const navigate = useNavigate()
     //handle error
@@ -72,7 +72,7 @@ const SignIn = () => {
                     showConfirmButton: false,
                     timer: 2000
                 });
-                navigate(`${location.state ? location.state : '/'}`)
+                navigate(from)
 
             })
             .catch(error => {

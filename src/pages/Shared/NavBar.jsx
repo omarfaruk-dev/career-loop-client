@@ -44,8 +44,8 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 shadow-sm" style={{ background: 'linear-gradient(90deg, #f6f9fc 60%, #dbeafe 100%)' }}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-4 lg:px-0">
+    <nav className="fixed top-0 w-full z-50 shadow-sm" style={{ background: 'linear-gradient(90deg, #f6f9fc 60%, #dbeafe 100%)' }}>
+      <div className="max-w-[1326px] mx-auto flex items-center justify-between h-20 px-4 lg:px-0">
         {/* Logo */}
         <div className="flex items-center gap-2">
           {/* <img src="/logo.png" alt="JobBox Logo" className="w-8 h-8" /> */}

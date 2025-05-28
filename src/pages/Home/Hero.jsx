@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 const Hero = () => {
     return (
         <section className="bg-[#f6f9fc] py-10 md:py-20 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8 gap-10 md:gap-0">
+            <div className="max-w-[1326px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8 gap-10 md:gap-0">
                 {/* Left: Text & Search */}
                 <div className="flex-1 w-full max-w-xl text-center md:text-left">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0a2259] mb-6">

@@ -83,9 +83,9 @@ const NavBar = () => {
   const [showUserPhotoMobile, setShowUserPhotoMobile] = useState(true);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 bg-base-200 backdrop-blur-2xl border-b border-secondary/20 transition-colors duration-300 ${scrolled ? "shadow-md" : ""}`}>
+    <nav className={`fixed w-full top-0 z-50  backdrop-blur-3xl border-b border-secondary/20 transition-colors duration-300 ${scrolled ? "shadow-md" : ""}`}>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4">
+      <div className="max-w-[1326px] mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo (always left) */}
         <div className="flex items-center">
           <Link to="/" className="text-xl font-bold text-primary flex items-center">
