@@ -42,7 +42,7 @@ const NavBar = () => {
     { name: 'Home', to: '/' },
     { name: 'Find a Job', to: '/jobs' },
     { name: 'My Applications', to: '/my-applications' },
-    { name: 'Blog', to: '/blog' },
+    { name: 'Add Job', to: '/add-job' },
     { name: 'Contact', to: '/contact' },
   ];
 
@@ -73,8 +73,8 @@ const NavBar = () => {
           <ThemeToggle />
           {!user ? (
             <>
-              <Link to="/signin" className="btn btn-secondary btn-outline px-4 py-1 rounded-md text-sm">Sign In</Link>
-              <Link to="/register" className="btn btn-secondary px-4 py-1 rounded-md text-sm">Sign Up</Link>
+              <Link to="/signin" className="btn btn-secondary btn-outline rounded-md text-sm">Sign In</Link>
+              <Link to="/register" className="btn btn-secondary rounded-md text-sm">Sign Up</Link>
             </>
           ) : (
             <div className="relative" ref={menuRef}>
@@ -123,8 +123,8 @@ const NavBar = () => {
             ))}
             {!user ? (
               <>
-                <Link to="/signin" className="btn btn-secondary btn-outline px-4 py-1 rounded-md text-sm" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
-                <Link to="/register" className="btn btn-secondary px-4 py-1 rounded-md text-sm" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
+                <Link to="/signin" className="btn btn-secondary btn-outline" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
+                <Link to="/register" className="btn btn-secondary" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
               </>
             ) : (
               <div className="flex flex-col items-center gap-2">
