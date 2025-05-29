@@ -6,7 +6,7 @@ const ApplicationList = ({ MyApplicationsPromise }) => {
 
 
     return (
-        <div className="overflow-x-auto">
+        <div className="min-h-[calc(100vh-480px)] max-w-7xl mx-auto px-4 py-8 overflow-x-auto">
             <table className="table border border-secondary/5">
                 {/* head */}
                 <thead className='bg-secondary/10'>
