@@ -14,6 +14,7 @@ const PostedJobLists = ({ jobsCreatedByPromise }) => {
                         <th>Serial</th>
                         <th>Title</th>
                         <th>Deadline</th>
+                        <th>Count</th>
                         <th>View Applications</th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@ const PostedJobLists = ({ jobsCreatedByPromise }) => {
                                 <td>{index + 1}</td>
                                 <td>{job.title}</td>
                                 <td>{job.applicationDeadline}</td>
+                                <td>{job.application_count}</td>
                                 <td> <Link className='btn btn-sm btn-secondary btn-outline' to ={`/view-applications/${job._id}`}>View</Link> </td>
                             </tr>
                         ))
