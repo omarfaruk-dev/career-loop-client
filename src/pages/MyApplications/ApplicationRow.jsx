@@ -1,9 +1,11 @@
-import React from 'react';
 
-const ApplicationRow = ({ application }) => {
 
-    const { title, company, company_logo, jobType, category, status } = application;
-    console.log(jobType);
+
+const ApplicationRow = ({ application, handleDelete }) => {
+    const { _id, title, company, company_logo, jobType, category, status } = application;
+
+    //delete application
+    
 
     return (
 
@@ -30,7 +32,9 @@ const ApplicationRow = ({ application }) => {
             </td>
             <td>{status}</td>
             <th>
-                <button className="btn btn-warning btn-outline btn-xs">Delete</button>
+                <button
+                    onClick={() => handleDelete(_id)}
+                    className="btn btn-warning btn-outline btn-xs">Delete</button>
             </th>
         </tr>
     );

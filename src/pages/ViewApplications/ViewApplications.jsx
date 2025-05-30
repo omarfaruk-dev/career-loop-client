@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import { FaArrowLeft } from "react-icons/fa";
 
 const ViewApplications = () => {
-    // const { job_id } = useParams();
     const applications = useLoaderData();
+    const navigate = useNavigate();
     console.log(applications);
 
     const handleStatusChange = (e, app_id) => {
@@ -33,26 +34,40 @@ const ViewApplications = () => {
 
     return (
         <div className='min-h-[calc(100vh-480px)] max-w-7xl mx-auto px-4 py-8'>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    {/* head */}
-                    <thead>
+            <div className="flex items-center mb-2">
+                <button
+                    type="button"
+                    onClick={() => navigate(-1)}
+                    className="btn btn-outline btn-sm btn-secondary flex items-center gap-2"
+                >
+                    <FaArrowLeft size={15} /> Back
+                </button>
+            </div>
+            <h2 className='text-center text-primary font-semibold text-3xl py-10'>View Applications</h2>
+            <div className="overflow-x-auto rounded-lg shadow border border-secondary/20">
+                <table className="table w-full rounded-lg overflow-hidden">
+                    <thead className="bg-secondary/10 text-secondary uppercase text-sm font-semibold">
                         <tr>
-                            <th>Serial</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th className="py-3 px-4">Serial</th>
+                            <th className="py-3 px-4 text-left">Name</th>
+                            <th className="py-3 px-4 text-left">Email</th>
+                            <th className="py-3 px-4 text-left">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {/* row 1 */}
-                        {
+                    <tbody className="divide-y divide-secondary/10">
+                        {applications.length === 0 ? (
+                            <tr>
+                                <td colSpan={4} className="py-8 px-4 text-center text-secondary text-lg font-semibold">
+                                    No applications found for this job yet.
+                                </td>
+                            </tr>
+                        ) : (
                             applications.map((application, index) => (
-                                <tr key={application._id}>
-                                    <th>{index + 1}</th>
-                                    <td>{application.name}</td>
-                                    <td>{application.email}</td>
-                                    <td>
+                                <tr key={application._id} className="hover:bg-secondary/5 transition-colors">
+                                    <td className="py-2 px-4">{index + 1}</td>
+                                    <td className="py-2 px-4">{application.name}</td>
+                                    <td className="py-2 px-4">{application.email}</td>
+                                    <td className="py-2 px-4">
                                         <select
                                             onChange={(e) => handleStatusChange(e, application._id)}
 
@@ -68,7 +83,7 @@ const ViewApplications = () => {
                                     </td>
                                 </tr>
                             ))
-                        }
+                        )}
                     </tbody>
                 </table>
             </div>

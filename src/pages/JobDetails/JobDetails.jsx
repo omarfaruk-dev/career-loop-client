@@ -22,9 +22,9 @@ const JobDetails = () => {
     } = job;
 
     return (
-        <section className='w-[1326px] mx-auto mt-30'>
+        <section className='min-h-[calc(100vh-480px)] max-w-7xl mx-auto px-4 py-8'>
             {/* Cover Photo Section */}
-            <div className=" h-40 md:h-56 flex items-center justify-center bg-gradient-to-br from-secondary/70 via-secondary/40 to-primary/40 rounded-2xl mb-8">
+            <div className=" h-40 md:h-56 flex items-center justify-center bg-gradient-to-br from-secondary/30 via-base-100/20 to-secondary/30 rounded-2xl mb-8">
                 <h1 className="text-secondary text-2xl md:text-4xl font-bold drop-shadow-lg">{title}</h1>
             </div>
             <div className="max-w-4xl mx-auto bg-base-100 rounded-xl shadow p-6 md:p-10">

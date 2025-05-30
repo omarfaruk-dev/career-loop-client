@@ -10,7 +10,7 @@ const MyPostedJobs = () => {
 
     return (
         <div className='min-h-[calc(100vh-480px)] max-w-7xl mx-auto px-4 py-8'>
-            <h2>My Posted JObs</h2>
+            <h2 className='text-center text-primary font-semibold text-3xl py-10'>My Posted Jobs</h2>
             <Suspense fallback={<Spinner />}>
                 <PostedJobLists jobsCreatedByPromise={jobsCreatedByPromise(user.email)} />
             </Suspense>

@@ -42,8 +42,8 @@ const JobApply = () => {
     };
 
     return (
-        <>
-            <div className="mt-30 flex items-center justify-between max-w-xl mx-auto mb-4 px-2">
+        <div className='min-h-[calc(100vh-480px)] max-w-7xl mx-auto px-4 py-8'>
+            <div className=" flex items-center justify-between max-w-xl mx-auto mb-4 px-2">
                 <button
                     type="button"
                     onClick={() => navigate(-1)}
@@ -154,7 +154,7 @@ const JobApply = () => {
                     </div>
                 </form>
             </section>
-        </>
+        </div>
     );
 };
 
