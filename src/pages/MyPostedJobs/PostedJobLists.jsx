@@ -17,17 +17,25 @@ const PostedJobLists = ({ jobsCreatedByPromise }) => {
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-secondary/10">
-                    {jobs.map((job, index) => (
-                        <tr key={job._id} className="hover:bg-secondary/5 transition-colors">
-                            <td className="py-2 px-4">{index + 1}</td>
-                            <td className="py-2 px-4">{job.title}</td>
-                            <td className="py-2 px-4">{job.applicationDeadline}</td>
-                            <td className="py-2 px-4">{job.application_count}</td>
-                            <td className="py-2 px-4">
-                                <Link className='btn btn-sm btn-secondary btn-outline' to={`/view-applications/${job._id}`}>View</Link>
+                    {jobs.length === 0 ? (
+                        <tr>
+                            <td colSpan={5} className="py-8 px-4 text-center text-secondary text-lg font-semibold">
+                                You have not posted any jobs yet.
                             </td>
                         </tr>
-                    ))}
+                    ) : (
+                        jobs.map((job, index) => (
+                            <tr key={job._id} className="hover:bg-secondary/5 transition-colors">
+                                <td className="py-2 px-4">{index + 1}</td>
+                                <td className="py-2 px-4">{job.title}</td>
+                                <td className="py-2 px-4">{job.applicationDeadline}</td>
+                                <td className="py-2 px-4">{job.application_count}</td>
+                                <td className="py-2 px-4">
+                                    <Link className='btn btn-sm btn-secondary btn-outline' to={`/view-applications/${job._id}`}>View</Link>
+                                </td>
+                            </tr>
+                        ))
+                    )}
                 </tbody>
             </table>
         </div>

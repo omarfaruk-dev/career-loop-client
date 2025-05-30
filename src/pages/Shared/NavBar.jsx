@@ -53,7 +53,7 @@ const NavBar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           {/* <img src="/logo.png" alt="JobBox Logo" className="w-8 h-8" /> */}
-          <span className="text-2xl font-bold text-primary tracking-tight">Career<span className="text-secondary">Loop</span></span>
+          <span className="text-2xl font-bold text-primary tracking-tight">Career<span className="text-secondary">Hub</span></span>
         </div>
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8">
@@ -62,7 +62,7 @@ const NavBar = () => {
               key={link.name}
               to={link.to}
               className={({ isActive }) =>
-                `text-base font-medium transition-colors duration-200 ${isActive ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-[#0a2259] hover:text-blue-500'}`
+                `text-base font-medium transition-colors duration-200 ${isActive ? 'text-secondary border-b-2 border-secondary pb-1' : 'text-primary'}`
               }
             >
               {link.name}

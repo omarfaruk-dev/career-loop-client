@@ -3,16 +3,15 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#f6f9fc] border-t border-secondary/10 mt-16">
+        <footer className="bg-secondary/5 border-t border-secondary/10 mt-16">
             <div className="max-w-[1326px] mx-auto px-4 md:px-8 py-12">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
                     {/* Brand & Social */}
                     <div className="w-full lg:w-1/6 min-w-[180px] mb-8 md:mb-0 flex flex-col">
                         <div className="flex items-center gap-2 mb-3">
-                            <img src="/logo.png" alt="JobBox Logo" className="w-8 h-8" />
-                            <span className="text-2xl font-bold text-[#0a2259]">Job<span className="text-secondary">Box</span></span>
+                            <span className="text-2xl font-bold text-primary">Career<span className="text-secondary">Hub</span></span>
                         </div>
-                        <p className="text-gray-500 text-sm mb-5 max-w-xs">
+                        <p className="text-accent text-sm mb-5 max-w-xs">
                             JobBox is the heart of the design community and the best resource to discover and connect with designers and jobs worldwide
                         </p>
                         <div className="flex gap-4">
@@ -31,7 +30,7 @@ const Footer = () => {
                     <div className="w-full lg:w-5/6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                         <div className="min-w-0">
                             <h4 className="font-semibold text-primary mb-3">Resources</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-accent">
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Candidates</a></li>
                                 <li><a href="#">Contact Us</a></li>
@@ -39,7 +38,7 @@ const Footer = () => {
                         </div>
                         <div className="min-w-0">
                             <h4 className="font-semibold text-primary mb-3">Community</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-accent">
                                 <li><a href="#">Feature</a></li>
                                 <li><a href="#">Pricing</a></li>
                                 <li><a href="#">Credit</a></li>
@@ -48,7 +47,7 @@ const Footer = () => {
                         </div>
                         <div className="min-w-0">
                             <h4 className="font-semibold text-primary mb-3">Quick links</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-accent">
                                 <li><a href="#">iOS</a></li>
                                 <li><a href="#">Android</a></li>
                                 <li><a href="#">Microsoft</a></li>
@@ -57,7 +56,7 @@ const Footer = () => {
                         </div>
                         <div className="min-w-0">
                             <h4 className="font-semibold text-primary mb-3">More</h4>
-                            <ul className="space-y-2 text-sm text-gray-600">
+                            <ul className="space-y-2 text-sm text-accent">
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Helps</a></li>
                                 <li><a href="#">Terms</a></li>
@@ -66,7 +65,7 @@ const Footer = () => {
                         </div>
                         <div className="min-w-0">
                             <h4 className="font-semibold text-primary mb-3">Download App</h4>
-                            <p className="text-gray-600 text-xs mb-3">
+                            <p className="text-accent text-xs mb-3">
                                 Download our Apps and get extra 15% Discount on your first Order...!
                             </p>
                             <div className="flex gap-2">
@@ -87,7 +86,7 @@ const Footer = () => {
                     <div className="text-gray-500 text-sm">
                         Copyright © {new Date().getFullYear()}. JobBox all right reserved
                     </div>
-                    <div className="flex gap-6 text-sm text-gray-600">
+                    <div className="flex gap-6 text-sm text-accent">
                         <a href="#" className="hover:text-secondary">Privacy Policy</a>
                         <a href="#" className="hover:text-secondary">Terms & Conditions</a>
                         <a href="#" className="hover:text-secondary">Security</a>
