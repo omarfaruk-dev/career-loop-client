@@ -16,7 +16,7 @@ const MyApplications = () => {
             <h2 className='text-center text-primary font-semibold text-3xl py-10'>My Applications</h2>
             <ApplicationStats />
             <Suspense fallback={<Spinner />}>
-                <ApplicationList MyApplicationsPromise={MyApplicationsPromise(user.email)} />
+                <ApplicationList MyApplicationsPromise={MyApplicationsPromise(user.email, user.accessToken)} />
             </Suspense>
         </div>
     );
