@@ -23,7 +23,7 @@ const JobApply = () => {
         const application = {jobId, name, email, phone, linkedin, github, portfolio, resume, coverLetter };
 
         // Form submission (API call)
-        axios.post('http://localhost:3000/applications', application)
+        axios.post('https://career-loop-server.vercel.app/applications', application)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {

@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const PostedJobLists = ({ jobsCreatedByPromise }) => {
     const jobs = use(jobsCreatedByPromise);
-    console.log(jobs);
+    
     return (
         <div className="overflow-x-auto rounded-lg shadow border border-secondary/20">
             <table className="table w-full rounded-lg overflow-hidden">

@@ -52,7 +52,7 @@ const JobCard = ({ job }) => {
         <div className="bg-secondary/5 border hover:bg-base-100 border-secondary/10 rounded-xl p-6 shadow-sm transition hover:shadow-md flex flex-col justify-between min-w-[270px] max-w-xs w-full mx-auto md:max-w-sm lg:max-w-xs">
             {/* Company & Logo */}
             <div className="flex items-center gap-3 mb-2">
-                <img src={company_logo} alt={company} className="w-12 h-12 p-0.5 rounded-lg object-cover  border border-secondary/10" />
+                <img src={company_logo} className="w-12 h-12 p-0.5 rounded-lg object-cover  border border-secondary/10" />
                 <div>
                     <h3 className="font-semibold text-lg text-primary leading-tight">{company}</h3>
                     <div className="flex items-center gap-1 text-xs text-gray-400">

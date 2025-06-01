@@ -13,7 +13,7 @@ const ViewApplications = () => {
         console.log(newStatus, app_id);
 
         // send to the server/ db
-        axios.patch(`http://localhost:3000/applications/${app_id}`, { status: newStatus })
+        axios.patch(`https://career-loop-server.vercel.app/applications/${app_id}`, { status: newStatus })
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount) {

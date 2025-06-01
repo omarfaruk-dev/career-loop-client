@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             {
                 path: '/view-applications/:job_id',
                 element: <PrivateRoutes><ViewApplications/></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:3000/applications/job/${params.job_id}`)
+                loader: ({params}) => fetch(`https://career-loop-server.vercel.app/applications/job/${params.job_id}`)
             },
             
             {
                 path: '/job-details/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/jobs/${params.id}`),
+                loader: ({params}) => fetch(`https://career-loop-server.vercel.app/jobs/${params.id}`),
                 Component: JobDetails,
             },
             {

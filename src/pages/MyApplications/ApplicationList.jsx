@@ -6,7 +6,6 @@ import axios from 'axios';
 const ApplicationList = ({ myApplicationsPromise }) => {
     const applications = use(myApplicationsPromise);
     const [jobApp, setJobApp] = useState(applications);
-    console.log(jobApp);
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -19,7 +18,7 @@ const ApplicationList = ({ myApplicationsPromise }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/applications/${id}`)
+                axios.delete(`https://career-loop-server.vercel.app/applications/${id}`)
                     .then(res => {
 
                         console.log(res.data);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, updateProfile, signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/firebase.init';
 import { AuthContext } from './AuthContext';
-import axios from 'axios';
+// import axios from 'axios';
 
 const AuthProvider = ({ children }) => {
 
@@ -36,16 +36,16 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false)
-            if (currentUser?.email) {
-                const userData = { email: currentUser.email };
-                axios.post('http://localhost:3000/jwt', userData, {
-                    withCredentials: true
-                })
-                    .then(res => {
-                        console.log('Token after jwt: ', res.data);
-                    })
-                    .catch(error => console.log(error))
-            }
+            // if (currentUser?.email) {
+            //     const userData = { email: currentUser.email };
+            //     axios.post('https://career-loop-server.vercel.app/jwt', userData, {
+            //         withCredentials: true
+            //     })
+            //         .then(res => {
+            //             console.log('Token after jwt: ', res.data);
+            //         })
+            //         .catch(error => console.log(error))
+            // }
         })
         return () => {
             unsubscribe;
