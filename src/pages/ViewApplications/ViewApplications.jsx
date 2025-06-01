@@ -6,16 +6,13 @@ import { FaArrowLeft } from "react-icons/fa";
 const ViewApplications = () => {
     const applications = useLoaderData();
     const navigate = useNavigate();
-    console.log(applications);
 
     const handleStatusChange = (e, app_id) => {
         const newStatus = e.target.value;
-        console.log(newStatus, app_id);
 
         // send to the server/ db
         axios.patch(`https://career-loop-server.vercel.app/applications/${app_id}`, { status: newStatus })
             .then(res => {
-                console.log(res.data);
                 if (res.data.modifiedCount) {
                     Swal.fire({
                         position: "center",

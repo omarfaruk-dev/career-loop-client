@@ -21,7 +21,7 @@ const ApplicationList = ({ myApplicationsPromise }) => {
                 axios.delete(`https://career-loop-server.vercel.app/applications/${id}`)
                     .then(res => {
 
-                        console.log(res.data);
+                       
                         if (res.data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",

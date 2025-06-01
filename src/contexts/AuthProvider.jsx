@@ -36,16 +36,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false)
-            // if (currentUser?.email) {
-            //     const userData = { email: currentUser.email };
-            //     axios.post('https://career-loop-server.vercel.app/jwt', userData, {
-            //         withCredentials: true
-            //     })
-            //         .then(res => {
-            //             console.log('Token after jwt: ', res.data);
-            //         })
-            //         .catch(error => console.log(error))
-            // }
+           
         })
         return () => {
             unsubscribe;

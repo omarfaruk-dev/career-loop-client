@@ -1,5 +1,4 @@
 import axios from 'axios';
-import React from 'react';
 import useAuth from './useAuth';
 
 const axiosInstance = axios.create({
@@ -23,7 +22,7 @@ const useAxiosSecure = () => {
             if(error.status === 401 || error.status === 403) {
                 signOutUser()
                 .then(()=>{
-                    console.log('signout for 401');
+                    
                 })
                 .catch(error => console.log(error))
             }

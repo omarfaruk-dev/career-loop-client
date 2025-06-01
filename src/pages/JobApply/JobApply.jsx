@@ -25,7 +25,7 @@ const JobApply = () => {
         // Form submission (API call)
         axios.post('https://career-loop-server.vercel.app/applications', application)
             .then(res => {
-                console.log(res.data);
+                
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: "center",
@@ -37,7 +37,12 @@ const JobApply = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+               Swal.fire({
+                position: "center",
+                icon: "error",
+                title: `${error.message}`,
+                showConfirmButton: true,
+               })
             })
     };
 
