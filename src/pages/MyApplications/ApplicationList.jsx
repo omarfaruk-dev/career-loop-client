@@ -3,8 +3,8 @@ import ApplicationRow from './ApplicationRow';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-const ApplicationList = ({ MyApplicationsPromise }) => {
-    const applications = use(MyApplicationsPromise);
+const ApplicationList = ({ myApplicationsPromise }) => {
+    const applications = use(myApplicationsPromise);
     const [jobApp, setJobApp] = useState(applications);
     console.log(jobApp);
 
